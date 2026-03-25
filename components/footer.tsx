@@ -30,7 +30,7 @@ export default function FooterSection() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/10 py-12 md:py-16 bg-black/30 backdrop-blur-sm">
+    <footer className="border-t py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col items-center gap-8">
           {/* Logo/Name */}
@@ -68,7 +68,7 @@ export default function FooterSection() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex size-10 items-center justify-center rounded-lg border border-white/10 bg-black/30 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                className="flex size-10 items-center justify-center rounded-lg border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
                 aria-label={link.title}
               >
                 <link.icon className="size-5" />
