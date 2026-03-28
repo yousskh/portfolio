@@ -17,7 +17,6 @@ import * as THREE from 'three';
 import clsx from 'clsx';
 
 // replace with your own imports, see the usage snippet for details
-import lanyard from './lanyard.png';
 
 const cardGLB = '/card.glb';
 
@@ -129,24 +128,22 @@ function Band({maxSpeed = 50, minSpeed = 0, isMobile = false, cardTextureUrl}: B
     };
 
     const {nodes, materials} = useGLTF(cardGLB) as any;
-    const texture = useTexture(typeof lanyard === 'string' ? lanyard : lanyard.src) as THREE.Texture;
-    
+    // Pour garder l'ordre des Hooks (remplace useTexture supprimé)
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const dummyRef = useRef(null);
     // Load custom card texture if provided - use state to handle async loading
     const [customCardTexture, setCustomCardTexture] = useState<THREE.Texture | null>(null);
-    
     useEffect(() => {
         if (!cardTextureUrl) {
             setCustomCardTexture(null);
             return;
         }
-        
         const loader = new THREE.TextureLoader();
         loader.load(cardTextureUrl, (loadedTexture) => {
             loadedTexture.flipY = false;
             loadedTexture.colorSpace = THREE.SRGBColorSpace;
             setCustomCardTexture(loadedTexture);
         });
-        
         return () => {
             if (customCardTexture) {
                 customCardTexture.dispose();
@@ -210,7 +207,7 @@ function Band({maxSpeed = 50, minSpeed = 0, isMobile = false, cardTextureUrl}: B
     });
 
     curve.curveType = 'chordal';
-    texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+
 
     return (
         <>
@@ -264,12 +261,9 @@ function Band({maxSpeed = 50, minSpeed = 0, isMobile = false, cardTextureUrl}: B
             <mesh ref={band}>
                 <meshLineGeometry/>
                 <meshLineMaterial
-                    color="white"
+                    color="black"
                     depthTest={false}
                     resolution={isMobile ? [1000, 2000] : [1000, 1000]}
-                    useMap
-                    map={texture}
-                    repeat={[-4, 1]}
                     lineWidth={1}
                 />
             </mesh>
