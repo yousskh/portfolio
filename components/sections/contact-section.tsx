@@ -48,7 +48,7 @@ export default function ContactSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold md:text-4xl">Me Contacter</h2>
+          <h2 className="text-3xl font-bold md:text-4xl">Me contacter</h2>
           <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-primary" />
           <p className="mx-auto mt-6 max-w-2xl text-muted-foreground">
             Vous avez une question ou souhaitez discuter d&apos;un projet ? 
@@ -163,7 +163,7 @@ export default function ContactSection() {
 
               <div className="mt-8 space-y-4">
                 <a
-                  href="mailto:contact@youssefkhemira.com"
+                  href="mailto:youssef@khemira.cv"
                   className="flex items-center gap-4 rounded-lg p-3 transition-colors hover:bg-muted"
                 >
                   <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
@@ -171,12 +171,14 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
-                    <p className="font-medium">contact@youssefkhemira.com</p>
+                    <p className="font-medium">youssef@khemira.cv</p>                    
+                    <p className="font-medium">youssef.khemira@icloud.com</p>
+
                   </div>
                 </a>
 
                 <a
-                  href="https://github.com/youssefkhemira"
+                  href="https://github.com/yousskh"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 rounded-lg p-3 transition-colors hover:bg-muted"
@@ -186,7 +188,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">GitHub</p>
-                    <p className="font-medium">@youssefkhemira</p>
+                    <p className="font-medium">@yousskh</p>
                   </div>
                 </a>
 

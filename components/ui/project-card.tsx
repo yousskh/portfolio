@@ -91,7 +91,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             )}
             {project.links.report && (
               <a
-                href={project.links.report}
+                href={`/resources/${project.links.report}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"

@@ -20,19 +20,14 @@ export default function BadgePage() {
           Retour à l&apos;accueil
         </Link>
         
-        <div className="text-center">
-          <h1 className="text-3xl font-bold md:text-4xl">Mon Badge 3D</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Interagissez avec mon badge personnel ! Vous pouvez le faire glisser et le faire tourner.
-          </p>
-        </div>
+        
       </div>
       
       <PortfolioLanyard
         position={[0, 0, 20]}
         containerClassName="relative w-full h-[70vh] select-none"
         userName="Youssef KHEMIRA"
-        title="Etudiant en Informatique"
+        title="Étudiant ingénieur UTC en Génie Informatique"
         variant="dark"
       />
     </div>

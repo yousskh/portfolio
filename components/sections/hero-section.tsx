@@ -8,16 +8,31 @@ import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
 import { transitionVariants } from "@/lib/utils";
 import PortfolioLanyard from "@/components/portfolio-lanyard";
 import { Github, Linkedin, ArrowDown } from "lucide-react";
+import Dither from "@/components/Dither";
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen pt-20">
+    <section className="min-h-screen pt-20 relative overflow-hidden">
+      {/* Fond animé uniquement sur la section Hero */}
+      <div className="absolute inset-0 -z-10">
+        <Dither
+          waveSpeed={0.03}
+          waveFrequency={2}
+          waveAmplitude={0.3}
+          waveColor={[0.1, 0.1, 0.3, 0.05]}
+          colorNum={4}
+          pixelSize={3}
+          disableAnimation={false}
+          enableMouseInteraction={true}
+          mouseRadius={0.8}
+        />
+      </div>
       <div className="pb-24 pt-12 md:pb-32 lg:pb-20 lg:pt-24 lg:grid lg:grid-cols-2 lg:grid-rows-1 grid-cols-1 grid-rows-2">
         <div className="relative mx-auto flex max-w-xl flex-col px-6 lg:block">
           <div className="mx-auto max-w-2xl text-center lg:ml-0 lg:text-left">
             <div className="mt-8 lg:mt-16">
               <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 font-mono text-sm text-primary">
-                Etudiant en Informatique
+                Étudiant ingénieur UTC en Génie Informatique
               </span>
             </div>
             <TextEffect
@@ -44,8 +59,8 @@ export default function HeroSection() {
               as="p"
               className="mt-8 max-w-2xl text-pretty text-lg text-muted-foreground"
             >
-              Passionné par le développement logiciel et les nouvelles technologies. 
-              Je crée des solutions innovantes et partage mes projets personnels et académiques.
+              Futur ingénieur en informatique, orienté vers l'administration système, les réseaux et la sécurité informatique.
+              Constamment à la recherche de nouveaux défis pour apprendre et affiner mes compétences.
             </TextEffect>
             <AnimatedGroup
               variants={{
@@ -116,7 +131,7 @@ export default function HeroSection() {
           position={[0, 0, 20]}
           containerClassName="lg:absolute lg:top-0 lg:right-0 lg:w-1/2 relative w-full h-[70vh] lg:h-screen select-none"
           userName="Youssef KHEMIRA"
-          title="Etudiant en Informatique"
+          title="Étudiant ingénieur UTC en Génie Informatique"
           variant="dark"
         />
       </div>

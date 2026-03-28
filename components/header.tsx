@@ -43,7 +43,7 @@ export const HeroHeader = () => {
               </Link>
 
               <div className="flex items-center gap-2 lg:hidden">
-                <ThemeToggle />
+                {/* <ThemeToggle /> */}
                 <button
                   onClick={() => setMenuState(!menuState)}
                   aria-label={menuState ? "Close Menu" : "Open Menu"}
@@ -73,13 +73,13 @@ export const HeroHeader = () => {
               </div>
 
               <div className="hidden lg:block">
-                <ThemeToggle />
+                {/* <ThemeToggle /> */}
               </div>
 
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit lg:hidden">
                 <Button asChild size="sm">
                   <Link href="/#contact" onClick={handleNavClick}>
-                    <span>Me Contacter</span>
+                    <span>Me contacter</span>
                   </Link>
                 </Button>
               </div>

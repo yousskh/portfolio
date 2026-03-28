@@ -76,7 +76,7 @@ export default async function ProjectPage({
             )}
             {project.featured && (
               <Badge className="bg-primary text-primary-foreground">
-                Projet Phare
+                Mis en avant
               </Badge>
             )}
           </div>
@@ -106,11 +106,17 @@ export default async function ProjectPage({
 
         {/* Content */}
         <div className="prose prose-neutral dark:prose-invert max-w-none">
-          <h2>Description</h2>
-          <p className="text-lg leading-relaxed">{project.fullDescription}</p>
+          <div className="flex items-center gap-3">
+            <div className="flex-1 border-t border-muted-foreground/20 max-w-[48px]" />
+            <h2>Description</h2>
+          </div>
+          <p className="text-lg leading-relaxed mt-4 mb-8">{project.fullDescription}</p>
 
-          <h2>Technologies utilisées</h2>
-          <div className="not-prose flex flex-wrap gap-2">
+          <div className="flex items-center gap-3">
+            <div className="flex-1 border-t border-muted-foreground/20 max-w-[48px]" />
+            <h2>Étiquettes associées</h2>
+          </div>
+          <div className="not-prose flex flex-wrap gap-2 mt-4 mb-8">
             {project.technologies.map((tech) => (
               <span
                 key={tech}
@@ -120,6 +126,39 @@ export default async function ProjectPage({
               </span>
             ))}
           </div>
+
+            {project.coauthors && (
+            <>
+              <div className="flex items-center gap-3">
+                <div className="flex-1 border-t border-muted-foreground/20 max-w-[48px]" />
+                <h2>Co-auteurs</h2>
+              </div>
+              <div className="not-prose flex flex-wrap gap-2 mt-4 mb-8">
+                {project.coauthors.split(/,| et /).map((author) => (
+                  <Badge key={author.trim()} className="bg-primary/30 text-primary border-primary/40 font-medium px-4 py-1.5 text-sm">
+                    {author.trim()}
+                  </Badge>
+                ))}
+              </div>
+            </>
+            )}
+
+            {project.resp && (
+            <>
+              <div className="flex items-center gap-3">
+                <div className="flex-1 border-t border-muted-foreground/20 max-w-[48px]" />
+                <h2>Responsable / suiveur</h2>
+              </div>
+              <div className="not-prose flex flex-wrap gap-2 mt-4 mb-8">
+                {project.resp.split(/,| et /).map((resp) => (
+                  <Badge key={resp.trim()} className="bg-secondary/40 text-secondary-foreground border-secondary/50 font-medium px-4 py-1.5 text-sm">
+                    {resp.trim()}
+                  </Badge>
+                ))}
+              </div>
+            </>
+            )}
+
         </div>
 
         {/* Actions */}
@@ -151,7 +190,7 @@ export default async function ProjectPage({
           {project.links.report && (
             <Button asChild variant="outline" size="lg">
               <a
-                href={project.links.report}
+                href={`/resources/${project.links.report}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >

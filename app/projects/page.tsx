@@ -36,11 +36,10 @@ export default function ProjectsPage() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h1 className="text-4xl font-bold md:text-5xl">Mes Projets</h1>
+          <h1 className="text-4xl font-bold md:text-5xl">Mes projets</h1>
           <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-primary" />
           <p className="mx-auto mt-6 max-w-2xl text-muted-foreground">
-            Découvrez l&apos;ensemble de mes projets personnels et académiques. 
-            Chaque projet représente une opportunité d&apos;apprentissage et de création.
+            Découvrez l&apos;ensemble de mes projets personnels et académiques.
           </p>
         </motion.div>
 

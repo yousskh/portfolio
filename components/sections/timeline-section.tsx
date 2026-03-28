@@ -61,11 +61,10 @@ export default function TimelineSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold md:text-4xl">Mon Parcours</h2>
+          <h2 className="text-3xl font-bold md:text-4xl">Mon parcours</h2>
           <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-primary" />
           <p className="mx-auto mt-6 max-w-2xl text-muted-foreground">
-            Découvrez les étapes clés de mon parcours académique et professionnel, 
-            ainsi que les projets marquants qui ont jalonné mon apprentissage.
+            Voici les étapes clés de mon parcours académique et professionnel, qui ont façonné mon apprentissage.
           </p>
         </motion.div>
 

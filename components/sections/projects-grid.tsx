@@ -28,7 +28,7 @@ export default function ProjectsGrid() {
                 <Code2 className="size-5" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold md:text-3xl">Projets Personnels</h2>
+                <h2 className="text-2xl font-bold md:text-3xl">Projets personnels</h2>
                 <p className="text-sm text-muted-foreground">
                   Mes créations et expérimentations
                 </p>
@@ -65,7 +65,7 @@ export default function ProjectsGrid() {
                 <GraduationCap className="size-5" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold md:text-3xl">Projets Académiques</h2>
+                <h2 className="text-2xl font-bold md:text-3xl">Projets académiques</h2>
                 <p className="text-sm text-muted-foreground">
                   Travaux de cours et recherche
                 </p>

@@ -22,11 +22,7 @@ export default function FeaturedProject() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="mb-4 flex items-center justify-center gap-2">
-            <Sparkles className="size-5 text-primary" />
-            <span className="font-mono text-sm uppercase text-primary">Projet Phare</span>
-          </div>
-          <h2 className="text-3xl font-bold md:text-4xl">WebMDS</h2>
+          <h2 className="text-3xl font-bold md:text-4xl">Mes projets</h2>
           <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-primary" />
         </motion.div>
 
@@ -49,7 +45,7 @@ export default function FeaturedProject() {
                 </div>
                 {project.status === "in-progress" && (
                   <div className="absolute right-4 top-4">
-                    <Badge className="bg-amber-500 text-white">En développement</Badge>
+                    <Badge className="bg-amber-500 text-white">Mis en avant</Badge>
                   </div>
                 )}
               </div>

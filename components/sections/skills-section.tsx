@@ -1,79 +1,128 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { getAllSkills, type SkillCategory, type Skill } from "@/lib/skills";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { Code2, Globe, Terminal, Cpu, Database, Lightbulb } from "lucide-react";
+import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
+import { TextEffect } from "@/components/motion-primitives/text-effect";
 
-function SkillBar({ skill, index }: { skill: Skill; index: number }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.3, delay: index * 0.05 }}
-      viewport={{ once: true }}
-      className="group"
-    >
-      <div className="mb-2 flex items-center justify-between">
-        <span className="text-sm font-medium">{skill.name}</span>
-        <span className="text-xs text-muted-foreground">{skill.level}%</span>
-      </div>
-      <div className="h-2 overflow-hidden rounded-full bg-muted">
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: `${skill.level}%` }}
-          transition={{ duration: 0.8, delay: index * 0.05 + 0.2 }}
-          viewport={{ once: true }}
-          className="h-full rounded-full bg-gradient-to-r from-primary to-primary/70"
-        />
-      </div>
-    </motion.div>
-  );
-}
+const skillCategories = [
+  {
+    name: "Langages maîtrisés",
+    icon: Code2,
+    skills: ["Python", "C", "SQL",  "C++", "VB/VBA"],
+  },
+  {
+    name: "Web & Frameworks",
+    icon: Globe,
+    skills: ["HTML", "CSS", "JavaScript", "PHP", "Node.js", "React", "Laravel"],
+  },
+  {
+    name: "Ingénierie",
+    icon: Cpu,
+    skills: ["Fusion", "KiCad", "Arduino", "ESP32/ATTiny", "Impression 3D / découpe", "Électronique"],
+  },
+  {
+    name: "Outils & DevOps",
+    icon: Terminal,
+    skills: ["VS Code", "Git", "Docker", "Linux", "Suite Jetbrains", "Shell", "VMWare"],
+  },
+  {
+    name: "Bases de données",
+    icon: Database,
+    skills: ["MySQL", "SQLite", "PostgreSQL", "Access"],
+  },
+  {
+    name: "Domaines",
+    icon: Lightbulb,
+    skills: ["Systèmes", "Réseaux", "Administration", "Sécurité", "Déploiement", "Logiciel", "Data"],
+  },
+];
 
-function SkillCategoryCard({ category, index }: { category: SkillCategory; index: number }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      viewport={{ once: true }}
-      className="rounded-xl border bg-card p-6"
-    >
-      <h3 className="mb-6 text-lg font-semibold">{category.name}</h3>
-      <div className="space-y-4">
-        {category.skills.map((skill, skillIndex) => (
-          <SkillBar key={skill.name} skill={skill} index={skillIndex} />
-        ))}
-      </div>
-    </motion.div>
-  );
-}
+
+const CardDecorator = ({ children }: { children: React.ReactNode }) => (
+  <div className="mask-radial-from-40% mask-radial-to-60% relative mx-auto size-36 duration-200 [--color-border:color-mix(in_oklab,var(--color-white)15%,transparent)] group-hover:[--color-border:color-mix(in_oklab,var(--color-white)20%,transparent)]">
+    <div
+      aria-hidden
+      className="absolute inset-0 bg-[linear-gradient(to_right,var(--color-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-border)_1px,transparent_1px)] bg-size-[24px_24px] opacity-50"
+    />
+    <div className="bg-background absolute inset-0 m-auto flex size-12 items-center justify-center border-l border-t">{children}</div>
+  </div>
+);
+
+const transitionVariants = {
+  item: {
+    hidden: {
+      opacity: 0,
+      filter: 'blur(12px)',
+      y: 12,
+    },
+    visible: {
+      opacity: 1,
+      filter: 'blur(0px)',
+      y: 0,
+      transition: {
+        type: 'spring',
+        bounce: 0.3,
+        duration: 1.5,
+      },
+    },
+  },
+};
 
 export default function SkillsSection() {
-  const categories = getAllSkills();
-
   return (
-    <section id="skills" className="py-24 lg:py-32">
-      <div className="mx-auto max-w-6xl px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <h2 className="text-3xl font-bold md:text-4xl">Compétences</h2>
-          <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-primary" />
-          <p className="mx-auto mt-6 max-w-2xl text-muted-foreground">
-            Les technologies et outils que je maîtrise, acquis au fil de mes études 
-            et de mes projets personnels.
-          </p>
-        </motion.div>
-
-        <div className="mt-16 grid gap-6 md:grid-cols-2">
-          {categories.map((category, index) => (
-            <SkillCategoryCard key={category.id} category={category} index={index} />
-          ))}
+    <section className="py-16 md:py-32 bg-transparent" id="skills">
+      <div className="mx-auto max-w-5xl px-6">
+        <div className="text-center">
+          <TextEffect
+            triggerOnView
+            preset="fade-in-blur"
+            speedSegment={0.3}
+            as="h2"
+            className="text-balance text-4xl font-semibold lg:text-5xl"
+          >
+            Compétences
+          </TextEffect>
         </div>
+        <AnimatedGroup
+          triggerOnView
+          variants={{
+            container: {
+              visible: {
+                transition: {
+                  staggerChildren: 0.1,
+                  delayChildren: 0.3,
+                },
+              },
+            },
+            ...transitionVariants,
+          }}
+        >
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {skillCategories.map((category) => (
+              <Card key={category.name} className="group bg-black/30 backdrop-blur-sm border-white/10 hover:border-white/20 transition-colors">
+                <CardHeader className="pb-3">
+                  <CardDecorator>
+                    <category.icon className="size-6" aria-hidden />
+                  </CardDecorator>
+                  <h3 className="mt-6 font-medium text-xl text-center">{category.name}</h3>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    {category.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-1 text-sm bg-white/5 border border-white/10 rounded-full text-muted-foreground"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </AnimatedGroup>
       </div>
     </section>
   );

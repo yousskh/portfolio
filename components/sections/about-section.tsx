@@ -6,8 +6,8 @@ import { Code2, Lightbulb, Target, Users } from "lucide-react";
 const highlights = [
   {
     icon: Code2,
-    title: "Passionné de Code",
-    description: "Toujours en quête de nouvelles technologies et de meilleures pratiques de développement.",
+    title: "Capacité d'apprentissage",
+    description: "Toujours l'envie de découvrir de nouvelles technologies et d'approfondir mes compétences techniques.",
   },
   {
     icon: Lightbulb,
@@ -16,13 +16,13 @@ const highlights = [
   },
   {
     icon: Target,
-    title: "Orienté Résultats",
-    description: "Focalisé sur la livraison de projets de qualité dans les délais impartis.",
+    title: "Adaptation",
+    description: "Je m'adapte rapidement aux nouveaux environnements de travail et aux technologies émergentes.",
   },
   {
     icon: Users,
-    title: "Esprit d'Équipe",
-    description: "Collaboration et partage de connaissances sont au coeur de ma démarche.",
+    title: "Esprit d'équipe",
+    description: "Collaboration et communication sont au coeur de mon travail.",
   },
 ];
 
@@ -51,17 +51,19 @@ export default function AboutSection() {
           >
             <p className="text-lg text-muted-foreground leading-relaxed">
               Bonjour ! Je suis <span className="font-semibold text-foreground">Youssef KHEMIRA</span>, 
-              étudiant en informatique passionné par le développement logiciel et les technologies web modernes.
+              étudiant ingénieur en informatique à l'Université de Technologie de Compoiègne.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Mon parcours académique m&apos;a permis d&apos;acquérir de solides bases en programmation, 
-              algorithmique et conception de systèmes. En parallèle, je développe des projets personnels 
+              Mon parcours académique m&apos;a permis d&apos;acquérir de solides bases en conception, 
+              algorithmique et conception de systèmes. Ces bases sont complétées par des enseignements en sciences humaines, économie, ingénierie soutenable, éthique ainsi que de nombreuses autres thématiques d'actualité, toutes importantes pour les ingénieurs de demain.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Alors que mes enseignements m'ont appris la rigueur théorique et les fondations des sciences informatiques, je développe en parallèle des projets personnels 
               qui me permettent d&apos;explorer de nouvelles technologies et de mettre en pratique mes connaissances.
+ 
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Je suis particulièrement intéressé par le développement full-stack, l&apos;architecture logicielle 
-              et les bonnes pratiques de développement. Mon objectif est de créer des applications 
-              performantes, maintenables et centrées sur l&apos;utilisateur.
+              <p className="text-lg text-muted-foreground leading-relaxed">
+              Je suis particulièrement intéressé par l'administration et la gestion de systèmes, les réseaux informatiques, ainsi que tout l'aspect architectural et la sécurité.
             </p>
           </motion.div>
 

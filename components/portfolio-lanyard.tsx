@@ -19,7 +19,7 @@ export default function PortfolioLanyard({
   position = [0, 0, 20],
   containerClassName,
   userName = "Youssef KHEMIRA",
-  title = "Etudiant en Informatique",
+  title = "Étudiant ingénieur UTC en Génie Informatique",
   variant = "dark",
 }: PortfolioLanyardProps) {
   const [cardTextureUrl, setCardTextureUrl] = useState<string | undefined>(undefined);

@@ -51,46 +51,39 @@ const CardTemplate = forwardRef<CardTemplateRef, CardTemplateProps>(
         ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
       }
 
-      // Draw user name at the bottom left area (below the geometric pattern)
+      // Draw user name (centré et plus haut)
       const displayName = userName || "YOUR NAME";
       ctx.fillStyle = textColor;
-      ctx.font = 'normal 48px "Geist Mono", monospace';
-      ctx.textAlign = "right";
+      ctx.font = 'bold 64px "Geist Mono", monospace';
+      ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      
-      const textX = (CANVAS_SIZE / 2) - 55;
-      const textY = CANVAS_SIZE - 400;
+      const textX = CANVAS_SIZE / 2;
+      const textY = CANVAS_SIZE - 320;
       ctx.fillText(displayName.toUpperCase(), textX, textY);
 
-      // Render city label
+      // Render city label (centré, plus haut)
       if (city) {
         const cityRender = canvas.getContext("2d");
-
         if (!cityRender) return;
-
         cityRender.fillStyle = textColor;
-        cityRender.font = 'normal 48px "Geist Mono", monospace';
-        cityRender.textAlign = "right";
+        cityRender.font = 'normal 40px "Geist Mono", monospace';
+        cityRender.textAlign = "center";
         cityRender.textBaseline = "middle";
-
-        const cityTextX = (CANVAS_SIZE / 2) - 55;
-        const cityTextY = CANVAS_SIZE - 1226;
+        const cityTextX = CANVAS_SIZE / 2;
+        const cityTextY = 180;
         cityRender.fillText(city.toUpperCase(), cityTextX, cityTextY);
       }
 
-      // Render date label
+      // Render date label (centré, sous la ville)
       if (date) {
         const dateRender = canvas.getContext("2d");
-
         if (!dateRender) return;
-
         dateRender.fillStyle = '#878787';
-        dateRender.font = 'normal 48px "Geist Mono", monospace';
-        dateRender.textAlign = "right";
+        dateRender.font = 'normal 36px "Geist Mono", monospace';
+        dateRender.textAlign = "center";
         dateRender.textBaseline = "middle";
-
-        const dateTextX = (CANVAS_SIZE / 2) - 55;
-        const dateTextY = CANVAS_SIZE - 1170;
+        const dateTextX = CANVAS_SIZE / 2;
+        const dateTextY = 240;
         dateRender.fillText(date.toUpperCase(), dateTextX, dateTextY);
       }
 
@@ -120,46 +113,39 @@ const CardTemplate = forwardRef<CardTemplateRef, CardTemplateProps>(
         fullCtx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
       }
 
-      // Draw user name at the bottom left area (below the geometric pattern)
+      // Draw user name (centré et plus haut)
       const displayName = userName || "YOUR NAME";
       fullCtx.fillStyle = textColor;
-      fullCtx.font = 'normal 48px "Geist Mono", monospace';
-      fullCtx.textAlign = "right";
+      fullCtx.font = 'bold 64px "Geist Mono", monospace';
+      fullCtx.textAlign = "center";
       fullCtx.textBaseline = "middle";
-      
-      const textX = (CANVAS_SIZE / 2) - 55;
-      const textY = CANVAS_SIZE - 400;
+      const textX = CANVAS_SIZE / 2;
+      const textY = CANVAS_SIZE - 320;
       fullCtx.fillText(displayName.toUpperCase(), textX, textY);
 
-      // Render city label
+      // Render city label (centré, plus haut)
       if (city) {
         const cityRender = fullCanvas.getContext("2d");
-
         if (!cityRender) return;
-
         cityRender.fillStyle = textColor;
-        cityRender.font = 'normal 48px "Geist Mono", monospace';
-        cityRender.textAlign = "right";
+        cityRender.font = 'normal 40px "Geist Mono", monospace';
+        cityRender.textAlign = "center";
         cityRender.textBaseline = "middle";
-
-        const cityTextX = (CANVAS_SIZE / 2) - 55;
-        const cityTextY = CANVAS_SIZE - 1226;
+        const cityTextX = CANVAS_SIZE / 2;
+        const cityTextY = 180;
         cityRender.fillText(city.toUpperCase(), cityTextX, cityTextY);
       }
 
-      // Render date label
+      // Render date label (centré, sous la ville)
       if (date) {
         const dateRender = fullCanvas.getContext("2d");
-
         if (!dateRender) return;
-
         dateRender.fillStyle = '#878787';
-        dateRender.font = 'normal 48px "Geist Mono", monospace';
-        dateRender.textAlign = "right";
+        dateRender.font = 'normal 36px "Geist Mono", monospace';
+        dateRender.textAlign = "center";
         dateRender.textBaseline = "middle";
-
-        const dateTextX = (CANVAS_SIZE / 2) - 55;
-        const dateTextY = CANVAS_SIZE - 1170;
+        const dateTextX = CANVAS_SIZE / 2;
+        const dateTextY = 240;
         dateRender.fillText(date.toUpperCase(), dateTextX, dateTextY);
       }
 
