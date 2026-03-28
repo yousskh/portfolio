@@ -11,7 +11,7 @@ const navLinks = [
 const socialLinks = [
   {
     title: "GitHub",
-    href: "https://github.com/youssefkhemira",
+    href: "https://github.com/yousskh",
     icon: Github,
   },
   {
@@ -21,7 +21,7 @@ const socialLinks = [
   },
   {
     title: "Email",
-    href: "mailto:contact@youssefkhemira.com",
+    href: "mailto:youssef@khemira.cv",
     icon: Mail,
   },
 ];
@@ -80,9 +80,6 @@ export default function FooterSection() {
           <div className="text-center">
             <p className="text-sm text-muted-foreground">
               &copy; {currentYear} Youssef KHEMIRA. Tous droits réservés.
-            </p>
-            <p className="mt-2 text-xs text-muted-foreground">
-              Construit avec Next.js, Tailwind CSS et React Three Fiber
             </p>
           </div>
         </div>

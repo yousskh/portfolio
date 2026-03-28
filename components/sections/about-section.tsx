@@ -55,7 +55,7 @@ export default function AboutSection() {
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Mon parcours académique m&apos;a permis d&apos;acquérir de solides bases en conception, 
-              algorithmique et conception de systèmes. Ces bases sont complétées par des enseignements en sciences humaines, économie, ingénierie soutenable, éthique ainsi que de nombreuses autres thématiques d'actualité, toutes importantes pour les ingénieurs de demain.
+              algorithmique et conception de systèmes. Ces bases sont complétées par des enseignements en sciences humaines, économie, ingénierie soutenable ainsi que de nombreuses autres thématiques d'actualité, toutes aussi importantes pour les ingénieurs de demain.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Alors que mes enseignements m'ont appris la rigueur théorique et les fondations des sciences informatiques, je développe en parallèle des projets personnels 
