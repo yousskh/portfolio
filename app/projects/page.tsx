@@ -1,6 +1,5 @@
 "use client";
-
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { motion } from "framer-motion";
 import { useSearchParams } from "next/navigation";
 import { getAllProjects, type ProjectType } from "@/lib/projects";
@@ -14,7 +13,7 @@ const filters = [
   { id: "academic", label: "Académiques", icon: GraduationCap },
 ] as const;
 
-export default function ProjectsPage() {
+function ProjectsContent() {
   const searchParams = useSearchParams();
   const initialFilter = searchParams.get("type") as ProjectType | null;
   const [activeFilter, setActiveFilter] = useState<"all" | ProjectType>(
@@ -79,5 +78,13 @@ export default function ProjectsPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function ProjectsPage() {
+  return (
+    <Suspense fallback={<div>Chargement...</div>}>
+      <ProjectsContent />
+    </Suspense>
   );
 }
