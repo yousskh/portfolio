@@ -92,6 +92,37 @@ export default function HeroSection() {
                 </Link>
               </Button>
             </AnimatedGroup>
+
+            <AnimatedGroup
+              variants={{
+                container: {
+                  visible: {
+                    transition: {
+                      staggerChildren: 0.05,
+                      delayChildren: 0.95,
+                    },
+                  },
+                },
+                ...transitionVariants,
+              }}
+              className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start"
+            >
+              <Button asChild size="lg" className="px-6 text-base">
+                <Link href="/resources/KHEMIRA_CV_Stage.pdf" target="_blank" rel="noopener noreferrer">
+                  <span className="text-nowrap">CV Français</span>
+                </Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="px-6 text-base"
+              >
+                <Link href="/resources/KHEMIRA_CV_Internship.pdf" target="_blank" rel="noopener noreferrer">
+                  <span className="text-nowrap">English CV</span>
+                </Link>
+              </Button>
+            </AnimatedGroup>
             <AnimatedGroup
               variants={{
                 container: {
@@ -107,7 +138,7 @@ export default function HeroSection() {
               className="mt-8 flex items-center justify-center gap-4 lg:justify-start"
             >
               <a
-                href="https://github.com/youssefkhemira"
+                href="https://github.com/yousskh"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
@@ -116,7 +147,7 @@ export default function HeroSection() {
                 <span className="text-sm">GitHub</span>
               </a>
               <a
-                href="https://linkedin.com/in/youssefkhemira"
+                href="https://linkedin.com/in/youssef-khemira"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"

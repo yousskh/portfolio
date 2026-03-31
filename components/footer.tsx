@@ -16,7 +16,7 @@ const socialLinks = [
   },
   {
     title: "LinkedIn",
-    href: "https://linkedin.com/in/youssefkhemira",
+    href: "https://linkedin.com/in/youssef-khemira",
     icon: Linkedin,
   },
   {

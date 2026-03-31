@@ -69,7 +69,6 @@ perte contrôlée.",
     tags: ["Mathématiques", "Recherche", "Rapport"],
     featured: false,
     links: {
-      github: "https://github.com/youssefkhemira",
       report: "TZ_KHEMIRA.pdf",
     },
     date: "2025",

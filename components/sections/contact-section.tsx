@@ -193,7 +193,7 @@ export default function ContactSection() {
                 </a>
 
                 <a
-                  href="https://linkedin.com/in/youssefkhemira"
+                  href="https://linkedin.com/in/youssef-khemira"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 rounded-lg p-3 transition-colors hover:bg-muted"
